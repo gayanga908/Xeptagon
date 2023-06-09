@@ -6,6 +6,7 @@ import com.test.xeptagon.exceptions.ModuleNotAllowedToExecuteException;
 import com.test.xeptagon.fatories.ModuleServiceFactory;
 import com.test.xeptagon.models.ExecuteModule;
 import com.test.xeptagon.utils.UserUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 import java.util.Set;
-
+@Tag(name = "Module", description = "Module management APIs")
 @RestController
 public class ModuleController {
 

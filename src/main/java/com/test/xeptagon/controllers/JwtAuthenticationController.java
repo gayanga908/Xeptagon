@@ -4,16 +4,17 @@ import com.test.xeptagon.models.JwtRequest;
 import com.test.xeptagon.models.JwtResponse;
 import com.test.xeptagon.services.JwtUserDetailsService;
 import com.test.xeptagon.utils.JwtTokenUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
+@Tag(name = "Authentication", description = "Authentication APIs")
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
-    private JwtTokenUtil jwtTokenUtil;
 
-    private JwtUserDetailsService userDetailsService;
+    private final JwtTokenUtil jwtTokenUtil;
+    private final JwtUserDetailsService userDetailsService;
 
     public JwtAuthenticationController(JwtTokenUtil jwtTokenUtil,
                                        JwtUserDetailsService userDetailsService) {
